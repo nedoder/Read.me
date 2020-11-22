@@ -1,0 +1,55 @@
+.footer {
+    box-shadow: 0rem 1rem 1rem #D6A99A;
+    inset;
+    background-color: #D6CBC1;
+    max-width: 100%;
+    padding: 1rem 2rem;
+    color: #E16036;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+
+.footer-logo {
+    column: 1 / 2;
+    padding: 0 1rem;
+}
+
+.footer-contact {
+    column: 2 / 3;
+    padding: 0 1rem;
+}
+
+.footer-guides {
+    column: 3 / 4;
+    padding: 0 1rem;
+}
+
+.footer-community {
+    column: 4 / 5;
+    padding: 0 1rem;
+}
+
+.footer a {
+    display: block;
+    text-decoration: none;
+    color: #E16036;
+}
+
+.fa-icons i:hover {
+    opacity: 0.5;
+}
+
+.footer-contacts {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    border-top: 1px solid white;
+}
