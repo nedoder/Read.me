@@ -19,3 +19,34 @@ body {
     background-repeat: no-repeat;
     overflow-x: hidden;
 }
+
+.about {
+    width: 60%;
+    height: auto;
+    margin: 1rem auto 1rem auto;
+    background-color: #CDD6D0;
+    border-radius: 0.5rem;
+    border: 2px solid #E16036;
+    padding: 1rem;
+    box-shadow: 0.5rem 0.5rem 0.5rem #D6CBC1;
+}
+
+.about img {
+    height: 50%;
+    width: 50%;
+    margin: auto;
+}
+
+.about p,
+.about h3 {
+    color: #E3170A;
+    padding: 0.5rem;
+}
+
+.about p {
+    font-weight: bold;
+}
+
+.about:hover {
+    box-shadow: 0.5rem 0.5rem 0.5rem #D6A99A;
+}
