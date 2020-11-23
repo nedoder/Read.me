@@ -33,18 +33,16 @@ body {
 
 .about img {
     height: 50%;
-    width: 50%;
+    width: 80%;
+    display: block;
     margin: auto;
 }
 
 .about p,
-.about h3 {
+.about h2 {
     color: #E3170A;
     padding: 0.5rem;
-}
-
-.about p {
-    font-weight: bold;
+    text-align: center;
 }
 
 .about:hover {
