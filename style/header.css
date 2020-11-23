@@ -34,29 +34,26 @@ input[type=text]:focus {
 
 .login {
     grid: 3 / 4;
-    border-radius: 0.6rem;
-    border: 1px solid #CDD6D0;
-    outline: none;
-    background-color: #E16036;
-    margin: 0.5rem;
-    transition: all 0.4s ease-in-out;
-    color: white;
-    font-size: 1rem;
 }
 
 .signup {
     grid: 4 / 5;
-    border-radius: 0.6rem;
-    border: 1px solid #CDD6D0;
-    outline: none;
-    background-color: #E16036;
+}
+
+.login,
+.signup {
     margin: 0.5rem;
     transition: all 0.4s ease-in-out;
     color: white;
     font-size: 1rem;
+    border-radius: 0.6rem;
+    border: 1px solid #CDD6D0;
+    outline: none;
+    background-color: #E16036;
 }
 
 .login:hover,
 .signup:hover {
     transform: scale(1.1);
+    background-color: #E3170A;
 }

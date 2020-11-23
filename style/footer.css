@@ -1,6 +1,5 @@
 .footer {
     box-shadow: 0rem 1rem 1rem #D6A99A;
-    inset;
     background-color: #D6CBC1;
     max-width: 100%;
     padding: 1rem 2rem;
@@ -14,25 +13,26 @@
 .grid-container {
     display: grid;
     grid-template-columns: auto auto auto auto;
+    justify-content: space-between;
 }
 
-.footer-logo {
-    column: 1 / 2;
+.footer-followus {
+    grid: 1 / 2;
     padding: 0 1rem;
 }
 
 .footer-contact {
-    column: 2 / 3;
+    grid: 2 / 3;
     padding: 0 1rem;
 }
 
 .footer-guides {
-    column: 3 / 4;
+    grid: 3 / 4;
     padding: 0 1rem;
 }
 
-.footer-community {
-    column: 4 / 5;
+.footer-navigation {
+    grid: 4 / 5;
     padding: 0 1rem;
 }
 
@@ -42,11 +42,16 @@
     color: #E16036;
 }
 
-.fa-icons i:hover {
-    opacity: 0.5;
+.footer a:hover {
+    color: #D6A99A;
 }
 
-.footer-contacts {
+.footer p {
+    color: #E3170A;
+    font-weight: bold;
+}
+
+.footer-logo {
     display: block;
     width: 100%;
     text-align: center;

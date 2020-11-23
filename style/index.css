@@ -5,6 +5,10 @@
      margin: 0;
  }
  
+ html {
+     scroll-behavior: smooth;
+ }
+ 
  body {
      max-width: 100%;
      font-size: 16px;
@@ -13,4 +17,5 @@
      background-size: cover;
      background-attachment: fixed;
      background-repeat: no-repeat;
+     overflow-x: hidden;
  }

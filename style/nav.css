@@ -54,6 +54,7 @@
 
 .dropdown-links a:hover {
     background-color: #E3170A;
+    overflow: hidden;
 }
 
 .dropdown:hover .dropdown-links {
