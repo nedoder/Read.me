@@ -1,7 +1,7 @@
 .footer {
     box-shadow: 0rem 1rem 1rem #D6A99A;
     background-color: #D6CBC1;
-    max-width: 100%;
+    width: 100%;
     padding: 1rem 2rem;
     color: #E16036;
     bottom: 0;
@@ -13,6 +13,7 @@
     display: grid;
     grid-template-columns: auto auto auto auto;
     justify-content: space-between;
+    padding-bottom: 0.5rem;
 }
 
 .footer-followus {
