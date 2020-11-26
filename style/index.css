@@ -34,20 +34,62 @@
      display: grid;
      grid-template-columns: 3fr 1fr;
      justify-content: center;
-     align-items: center;
  }
  
- .best-deals {
+ .latest {
      grid: 1 / 2;
      display: flex;
      flex-direction: row;
      flex-wrap: wrap;
  }
  
+ .latest button {
+     position: absolute;
+     bottom: 0;
+     margin-bottom: 0.5rem;
+     border-radius: 0.5rem;
+     background-color: #E16036;
+     color: white;
+     padding: 0.5rem;
+     text-align: center;
+     outline: none;
+ }
+ 
+ #previous,
+ #next {
+     cursor: pointer;
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     width: auto;
+     padding: 2rem;
+     color: #E16036;
+     font-weight: bold;
+     font-size: 2rem;
+ }
+ 
+ #previous {
+     left: -3%;
+ }
+ 
+ #next {
+     right: -3%;
+ }
+ 
  .left,
  .right,
  .center {
      width: 33%;
+     color: white;
+     background-repeat: no-repeat;
+     background-size: cover;
+ }
+ 
+ .leftimage,
+ .centerimage,
+ .rightimage {
+     margin: 0.5rem;
+     color: black;
  }
  
  .first-image,
@@ -59,7 +101,7 @@
      width: 33%;
  }
  
- .best-deals img,
+ .latest img,
  .top img,
  .top-rated img {
      width: 100%;
@@ -86,7 +128,7 @@
  .fb-feed,
  .top-rated,
  .top,
- .best-deals {
+ .latest {
      margin: 1rem;
      padding: 0.5rem;
      border-radius: 0.5rem;
@@ -97,7 +139,7 @@
  .fb-feed:hover,
  .top-rated:hover,
  .top:hover,
- .best-deals:hover {
+ .latest:hover {
      box-shadow: 0.5rem 0.5rem 0.5rem #D6A99A;
      border: 2px solid #E3170A;
  }
