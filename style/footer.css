@@ -1,9 +1,9 @@
 .footer {
-    box-shadow: 0rem 1rem 1rem #D6A99A;
-    background-color: #D6CBC1;
+    box-shadow: 0rem 0rem 0.5rem #119DA4;
+    background-color: #13505B;
     width: 100%;
     padding: 1rem 2rem;
-    color: #E16036;
+    color: #040404;
     bottom: 0;
     left: 0;
     right: 0;
@@ -39,15 +39,15 @@
 .footer a {
     display: block;
     text-decoration: none;
-    color: #E16036;
+    color: #D7D9CE;
 }
 
 .footer a:hover {
-    color: #D6A99A;
+    color: #119DA4;
 }
 
 .footer p {
-    color: #E3170A;
+    color: #040404;
     font-weight: bold;
 }
 

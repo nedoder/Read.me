@@ -1,7 +1,7 @@
 .nav {
     overflow: hidden;
-    background-color: #E16036;
-    box-shadow: 0rem 0.5rem 0.6rem #CDD6D0;
+    background-color: #13505B;
+    box-shadow: 0rem 0.1rem 0.2rem #119DA4;
 }
 
 .nav a {
@@ -24,22 +24,22 @@
     outline: none;
     color: white;
     padding: 1rem;
-    background-color: #E16036;
+    background-color: #13505B;
     margin: 0;
     font-size: 1rem;
 }
 
 .nav a:hover,
 .dropdown:hover .dropdown-button {
-    background-color: #E3170A;
+    background-color: #119DA4;
 }
 
 .dropdown-links {
     display: none;
     position: absolute;
-    background-color: #E16036;
+    background-color: #13505B;
     width: 7.4rem;
-    box-shadow: 0rem 0.5rem 0.6rem #CDD6D0;
+    box-shadow: 0rem 0.1rem 0.2rem #119DA4;
     z-index: 1;
 }
 
@@ -53,7 +53,7 @@
 }
 
 .dropdown-links a:hover {
-    background-color: #E3170A;
+    background-color: #119DA4;
     overflow: hidden;
 }
 
