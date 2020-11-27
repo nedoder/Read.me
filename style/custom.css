@@ -14,11 +14,11 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-    border: 0.4rem solid #E16036;
+    border: 0.4rem solid #13505B;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #E3170A;
+    background: #119DA4;
     border-radius: 0.5rem;
 }
 

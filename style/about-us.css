@@ -14,11 +14,11 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-    border: 0.4rem solid #E16036;
+    border: 0.4rem solid #13505B;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #E3170A;
+    background: #119DA4;
     border-radius: 0.5rem;
 }
 
@@ -35,9 +35,9 @@ body {
     margin: 1rem auto 1rem auto;
     background-color: #CDD6D0;
     border-radius: 0.5rem;
-    border: 2px solid #E16036;
+    border: 2px solid #119DA4;
     padding: 1rem;
-    box-shadow: 0.5rem 0.5rem 0.5rem #D6CBC1;
+    box-shadow: 0.1rem 0.1rem 0.1rem #0C7489;
 }
 
 .about img {
@@ -49,12 +49,12 @@ body {
 
 .about p,
 .about h2 {
-    color: #E3170A;
+    color: #0C7489;
     padding: 0.5rem;
     text-align: center;
 }
 
 .about:hover {
-    box-shadow: 0.5rem 0.5rem 0.5rem #D6A99A;
-    border: 2px solid #E3170A;
+    box-shadow: 0.1rem 0.1rem 0.3rem #0C7489;
+    border: 2px solid #119DA4;
 }
