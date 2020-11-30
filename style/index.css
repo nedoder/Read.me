@@ -79,7 +79,8 @@ body {
     float: left;
 }
 
-.latest {
+.latest,
+.top-rated {
     height: 70vh;
     display: flex;
     flex-direction: row;
@@ -94,7 +95,8 @@ body {
     display: table;
 }
 
-.btn {
+.btn,
+.books-hover {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -125,7 +127,8 @@ body {
     border: none;
 }
 
-.row:hover .btn {
+.row:hover .btn,
+.books:hover .books-hover {
     opacity: 1;
 }
 
@@ -162,9 +165,38 @@ body {
     background-size: 100% 100%;
 }
 
+.books {
+    position: relative;
+    width: 32%;
+    text-align: left;
+    margin: 0.2rem;
+    height: 40%;
+    display: none;
+    border-radius: 0.5rem;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.load button {
+    border-radius: 0.5rem;
+    background-color: #119DA4;
+    color: #D7D9CE;
+    padding: 0.8rem;
+    text-align: center;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 0.5rem #13505B;
+}
+
 .row:nth-child(1),
 .row:nth-child(2),
-.row:nth-child(3) {
+.row:nth-child(3),
+.books:nth-child(1),
+.books:nth-child(2),
+.books:nth-child(3),
+.books:nth-child(4),
+.books:nth-child(5),
+.books:nth-child(6) {
     display: block;
 }
 
@@ -194,13 +226,6 @@ body {
     float: left;
 }
 
-.top-rated {
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
 .top-rated::after {
     content: "";
     clear: both;
@@ -209,7 +234,6 @@ body {
 
 .fb-feed {
     display: flex;
-    width: 26%;
 }
 
 .fb-feed,
@@ -234,19 +258,28 @@ body {
 .fb-feed iframe {
     max-width: 100%;
     height: 30rem;
+    border-radius: 0.5rem;
     border: none;
-    overflow: hidden;
 }
 
 @media only screen and (max-width: 768px) {
     body {
         font-size: 13px;
     }
-    .row {
+    .row,
+    .books {
         width: 100%;
     }
+    .books {
+        height: 80%;
+    }
     .row:nth-child(2),
-    .row:nth-child(3) {
+    .row:nth-child(3),
+    .books:nth-child(2),
+    .books:nth-child(3),
+    .books:nth-child(4),
+    .books:nth-child(5),
+    .books:nth-child(6) {
         display: none;
     }
 }
@@ -265,12 +298,15 @@ body {
         display: none;
     }
     .first-block,
-    .third-block,
-    .top-rated {
-        max-width: 100%;
+    .third-block {
+        width: 100%;
         float: none;
         margin: 1rem auto;
         height: auto;
+    }
+    .books {
+        width: 100%;
+        height: 80%;
     }
 }
 
