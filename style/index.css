@@ -27,11 +27,59 @@ body {
     font-size: 16px;
     font-family: "Roboto", sans-serif;
     overflow-x: hidden;
+    background-color: #D7D9CE;
+}
+
+.header {
+    font-size: 2rem;
+    font-weight: bold;
+    width: 100%;
+    height: 10rem;
+    line-height: 10rem;
+    margin: auto;
+    padding: 1rem 2rem;
+    text-align: center;
+    border-bottom: 2px solid #13505B;
+    background-image: url("../images/code.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.header p {
+    color: #D7D9CE;
+    margin: auto;
+    width: 27ch;
+    overflow: hidden;
+    white-space: nowrap;
+    text-shadow: 0 0 0.5rem #119DA4;
+    animation: type 3s steps(27);
+}
+
+@keyframes type {
+    0% {
+        width: 0;
+    }
+}
+
+.first-block,
+.second-block,
+.third-block,
+.fourth-block {
+    margin: 1rem;
+}
+
+.heading {
+    color: #119DA4;
+    margin-left: 1rem;
+    text-decoration: underline;
+}
+
+.first-block {
+    width: 70%;
+    float: left;
 }
 
 .latest {
-    width: 75%;
-    float: left;
     height: 70vh;
     display: flex;
     flex-direction: row;
@@ -40,20 +88,45 @@ body {
     text-align: center;
 }
 
-.latest::after {
+.first-block::after {
     content: "";
     clear: both;
     display: table;
 }
 
-.latest button {
-    margin-bottom: 0.5rem;
+.btn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 1s ease;
+    background-color: rgba(19, 80, 91, 0.7);
     border-radius: 0.5rem;
-    background-color: #13505B;
-    color: white;
-    padding: 0.5rem;
+    color: #D7D9CE;
+    text-align: center;
+    padding: 1rem;
+}
+
+.btn button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0.5rem;
+    background-color: #119DA4;
+    color: #D7D9CE;
+    padding: 0.8rem;
     text-align: center;
     outline: none;
+    border: none;
+}
+
+.row:hover .btn {
+    opacity: 1;
 }
 
 #previous,
@@ -64,7 +137,7 @@ body {
     transform: translateY(-50%);
     width: auto;
     padding: 2rem;
-    color: #13505B;
+    color: #119DA4;
     font-weight: bold;
     font-size: 2rem;
 }
@@ -78,15 +151,15 @@ body {
 }
 
 .row {
+    position: relative;
     width: 32%;
-    color: white;
+    text-align: left;
     margin: 0.2rem;
     height: 100%;
-    color: #040404;
     display: none;
     border-radius: 0.5rem;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
 }
 
 .row:nth-child(1),
@@ -95,43 +168,33 @@ body {
     display: block;
 }
 
+.top {
+    display: flex;
+    height: 95vh;
+    flex-direction: column;
+}
+
 .leftimage,
 .centerimage,
 .rightimage {
-    margin: 0.5rem;
     color: black;
+    height: 31vh;
 }
 
 .leftimage img,
 .centerimage img,
 .rightimage img {
     border-radius: 0.5rem;
-}
-
-.first-image,
-.second-image,
-.third-image,
-.fourth-image,
-.fifth-image,
-.sixth-image {
-    width: 33%;
-}
-
-.latest img,
-.top img,
-.top-rated img {
     width: 100%;
+    height: 60%;
 }
 
-.top {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: no-wrap;
+.third-block {
+    width: 70%;
+    float: left;
 }
 
 .top-rated {
-    width: 72%;
-    float: left;
     height: auto;
     display: flex;
     flex-direction: row;
@@ -146,14 +209,14 @@ body {
 
 .fb-feed {
     display: flex;
-    width: 25%;
+    width: 26%;
 }
 
 .fb-feed,
 .top-rated,
 .top,
 .latest {
-    margin: 1rem;
+    margin: 0rem 1rem;
     padding: 0.5rem;
     border-radius: 0.5rem;
     border: 2px solid #13505B;
@@ -166,4 +229,57 @@ body {
 .latest:hover {
     box-shadow: 0.1rem 0.1rem 0.3rem #119DA4;
     border: 2px solid #119DA4;
+}
+
+.fb-feed iframe {
+    max-width: 100%;
+    height: 30rem;
+    border: none;
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 13px;
+    }
+    .row {
+        width: 100%;
+    }
+    .row:nth-child(2),
+    .row:nth-child(3) {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        font-size: 10px;
+    }
+    .header {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+    .second-block,
+    .fourth-block {
+        float: none;
+        display: none;
+    }
+    .first-block,
+    .third-block,
+    .top-rated {
+        max-width: 100%;
+        float: none;
+        margin: 1rem auto;
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    body {
+        font-size: 10px;
+    }
+    .header {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
 }

@@ -8,99 +8,122 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./style/index.css" rel="stylesheet">
-    <link href="./style/header.css" rel="stylesheet">
     <link href="./style/nav.css" rel="stylesheet">
     <link href="./style/footer.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-
-    <div class="header" id="header">
-        <img src="./images/Readme-Logo.png" alt="Logo" class="logo">
-        <input type="text" placeholder="Search for books..." name="search" class="search">
-        <button class="login">Log in</button>
-        <button class="signup">Sign up</button>
-    </div>
-
     <div class="nav">
+        <img src="./images/Readme-Logo.png" alt="Logo" class="logo">
+        <div class="dropdown-small">
+            <button class="menu"><i class="fa fa-bars fa-2x"></i></button>
+            <button class="close"><i class="fa fa-times fa-2x"></i></button>
+            <!--navbar for small screens-->
+            <div class="menu-dropdown">
+                <a href="#header" class="links active">Home</a>
+                <a href="./html/list.html" class="links">List</a>
+                <a href="./html/custom.html" class="links">Custom</a>
+                <a href="./html/about-us.html" class="links">About us</a>
+            </div>
+        </div>
         <div class="dropdown">
             <button class="dropdown-button">See more <i class="fa fa-caret-down"></i></button>
             <div class="dropdown-links animate__animated animate__fadeInRight">
-                <a href="./html/custom.html">Custom</a>
-                <a href="./html/about-us.html">About us</a>
-                <a href="#footer">Contact us</a>
+                <a href="http://novaknjiga.com/gknjizara/" target="_blank" class="big-links">Shop now</a>
+                <a href="https://www.udemy.com/" target="_blank" class="big-links">Courses</a>
+                <a href="#footer" class="big-links">Contact us</a>
             </div>
         </div>
-        <a href="./html/list.html">List</a>
-        <a href="#header">Home</a>
+        <a href="./html/about-us.html" class="big-links">About us</a>
+        <a href="./html/custom.html" class="big-links">Custom</a>
+        <a href="./html/list.html" class="big-links">List</a>
+        <a href="#header" class="big-links active">Home</a>
     </div>
 
-    <div class="first-grid">
+    <div class="header">
+        <p>Join us and learn programming!</p>
+    </div>
+
+    <div class="first-block">
+        <h3 class="heading animate__animated animate__fadeInLeft">Latest programming books</h3>
         <div class="latest animate__animated animate__fadeInLeft">
             <div class="row">
-                <h4 class="title"></h4>
-                <h6 class="author"></h6>
-                <p class="description"></p>
-                <button class="button">Show more</button>
+                <div class="btn">
+                    <h4 class="title"></h4>
+                    <h5 class="author"></h5>
+                    <button class="button">Show more</button>
+                </div>
             </div>
             <div class="row">
-                <h4 class="title"></h4>
-                <h6 class="author"></h6>
-                <p class="description"></p>
-                <button class="button">Show more</button>
+                <div class="btn">
+                    <h4 class="title"></h4>
+                    <h5 class="author"></h5>
+                    <button class="button">Show more</button>
+                </div>
             </div>
             <div class="row">
-                <h4 class="title"></h4>
-                <h6 class="author"></h6>
-                <p class="description"></p>
-                <button class="button">Show more</button>
+                <div class="btn">
+                    <h4 class="title"></h4>
+                    <h5 class="author"></h5>
+                    <button class="button">Show more</button>
+                </div>
             </div>
             <div class="row">
-                <h4 class="title"></h4>
-                <h6 class="author"></h6>
-                <p class="description"></p>
-                <button class="button">Show more</button>
+                <div class="btn">
+                    <h4 class="title"></h4>
+                    <h5 class="author"></h5>
+                    <button class="button">Show more</button>
+                </div>
             </div>
             <div class="row">
-                <h4 class="title"></h4>
-                <h6 class="author"></h6>
-                <p class="description"></p>
-                <button class="button">Show more</button>
+                <div class="btn">
+                    <h4 class="title"></h4>
+                    <h5 class="author"></h5>
+                    <button class="button">Show more</button>
+                </div>
             </div>
             <div class="row">
-                <h4 class="title"></h4>
-                <h6 class="author"></h6>
-                <p class="description"></p>
-                <button class="button">Show more</button>
+                <div class="btn">
+                    <h4 class="title"></h4>
+                    <h5 class="author"></h5>
+                    <button class="button">Show more</button>
+                </div>
             </div>
             <div class="row">
-                <h4 class="title"></h4>
-                <h6 class="author"></h6>
-                <p class="description"></p>
-                <button class="button">Show more</button>
+                <div class="btn">
+                    <h4 class="title"></h4>
+                    <h5 class="author"></h5>
+                    <button class="button">Show more</button>
+                </div>
             </div>
             <div class="row">
-                <h4 class="title"></h4>
-                <h6 class="author"></h6>
-                <p class="description"></p>
-                <button class="button">Show more</button>
+                <div class="btn">
+                    <h4 class="title"></h4>
+                    <h5 class="author"></h5>
+                    <button class="button">Show more</button>
+                </div>
             </div>
             <div class="row">
-                <h4 class="title"></h4>
-                <h6 class="author"></h6>
-                <p class="description"></p>
-                <button class="button">Show more</button>
+                <div class="btn">
+                    <h4 class="title"></h4>
+                    <h5 class="author"></h5>
+                    <button class="button">Show more</button>
+                </div>
             </div>
             <div class="row">
-                <h4 class="title"></h4>
-                <h6 class="author"></h6>
-                <p class="description"></p>
-                <button class="button">Show more</button>
+                <div class="btn">
+                    <h4 class="title"></h4>
+                    <h5 class="author"></h5>
+                    <button class="button">Show more</button>
+                </div>
             </div>
             <a id="previous">&#10094;</a>
             <a id="next">&#10095;</a>
         </div>
+    </div>
+    <div class="second-block">
+        <h3 class="heading animate__animated animate__fadeInRight">Best JavaScript books</h3>
         <div class="top animate__animated animate__fadeInRight">
             <div class="leftimage">
                 <h4 class="title-top"></h4>
@@ -122,18 +145,65 @@
             </div>
         </div>
     </div>
-    <div class="second-grid">
+    <div class="third-block">
+        <h3 class="heading animate__animated animate__fadeInLeft">Top rated programming books</h3>
         <div class="top-rated animate__animated animate__fadeInLeft">
-            <div class="first-image"><img src="./images/about-us.png" alt="Dummy"></div>
-            <div class="second-image"><img src="./images/about-us.png" alt="Dummy"></div>
-            <div class="third-image"><img src="./images/about-us.png" alt="Dummy"></div>
-            <div class="fourth-image"><img src="./images/about-us.png" alt="Dummy"></div>
-            <div class="fifth-image"><img src="./images/about-us.png" alt="Dummy"></div>
-            <div class="sixth-image"><img src="./images/about-us.png" alt="Dummy"></div>
+            <div class="books">
+                <h4 class="topheading"></h4>
+                <h5 class="book-author"></h5>
+                <p class="description"></p>
+            </div>
+            <div class="books">
+                <h4 class="topheading"></h4>
+                <h5 class="book-author"></h5>
+                <p class="description"></p>
+            </div>
+            <div class="books">
+                <h4 class="topheading"></h4>
+                <h5 class="book-author"></h5>
+                <p class="description"></p>
+            </div>
+            <div class="books">
+                <h4 class="topheading"></h4>
+                <h5 class="book-author"></h5>
+                <p class="description"></p>
+            </div>
+            <div class="books">
+                <h4 class="topheading"></h4>
+                <h5 class="book-author"></h5>
+                <p class="description"></p>
+            </div>
+            <div class="books">
+                <h4 class="topheading"></h4>
+                <h5 class="book-author"></h5>
+                <p class="description"></p>
+            </div>
+            <div class="books">
+                <h4 class="topheading"></h4>
+                <h5 class="book-author"></h5>
+                <p class="description"></p>
+            </div>
+            <div class="books">
+                <h4 class="topheading"></h4>
+                <h5 class="book-author"></h5>
+                <p class="description"></p>
+            </div>
+            <div class="books">
+                <h4 class="topheading"></h4>
+                <h5 class="book-author"></h5>
+                <p class="description"></p>
+            </div>
+            <div class="books">
+                <h4 class="topheading"></h4>
+                <h5 class="book-author"></h5>
+                <p class="description"></p>
+            </div>
+            <div class="load"><button class="load-more">Load more</button></div>
         </div>
+    </div>
+    <div class="fourth-block">
         <div class="fb-feed animate__animated animate__fadeInRight">
-            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FReadmne&tabs=timeline&width=300&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="300" height="500" style="border:none;overflow:hidden"
-                scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FReadmne&tabs=timeline&width=300&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"></iframe>
         </div>
     </div>
     <footer class="footer" id="footer">
@@ -148,9 +218,9 @@
             <div class="footer-contact">
                 <p> Contact Us</p>
                 <a href="#"><i class="fa fa-phone"></i> 067396283</a>
-                <a href="#"><i class="fa fa-map-marker"></i> Jerevanska 38, Podgorica</a>
+                <a href="#"><i class="fa fa-map-marker"></i> 81000&#44; Podgorica</a>
                 <a href="#"><i class="fa fa-envelope"></i> nedoder89@gmail.com</a>
-                <a href="#"><i class="fa fa-paint-brush"></i> Designed with love by nedoder</a>
+                <a href="#"><i class="fa fa-paint-brush"></i> Designed by Grupa 3</a>
             </div>
             <div class="footer-guides">
                 <p>Learn more</p>
@@ -175,6 +245,7 @@
     </footer>
 
     <script src="./js/index.js"></script>
+    <script src="./js/nav.js"></script>
 </body>
 
 </html>

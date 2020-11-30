@@ -1,7 +1,6 @@
 titles = document.getElementsByClassName("title");
 authors = document.getElementsByClassName("author");
 row = document.getElementsByClassName("row")
-desc = document.getElementsByClassName("description");
 button = document.getElementsByClassName("button");
 
 
@@ -10,7 +9,7 @@ button = document.getElementsByClassName("button");
 
 
 // fetching top 10 latest books
-fetch("https://www.googleapis.com/books/v1/volumes?q=book&orderBy=newest&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ")
+fetch("https://www.googleapis.com/books/v1/volumes?q=programming&orderBy=newest&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ")
     .then(function(res) {
         return res.json();
     })
@@ -19,16 +18,9 @@ fetch("https://www.googleapis.com/books/v1/volumes?q=book&orderBy=newest&key=AIz
             title = result.items[i].volumeInfo.title;
             author = result.items[i].volumeInfo.authors;
             image = result.items[i].volumeInfo.imageLinks.thumbnail;
-            description = result.items[i].volumeInfo.subtitle;
-
             titles[i].innerHTML = title;
             authors[i].innerHTML = author;
-            desc[i].innerHTML = description;
             row[i].style.backgroundImage = "url(" + image + ")";
-
-            console.log(image)
-            console.log(title)
-            console.log(author)
         }
 
     }),
@@ -73,29 +65,12 @@ function previousSlide(x) {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // fetching top 3 best books
 topTitle = document.getElementsByClassName("title-top");
 topAuthor = document.getElementsByClassName("author-top");
 topDescription = document.getElementsByClassName("description-top");
 bookImage = document.getElementsByClassName("book")
+
 
 fetch("https://www.googleapis.com/books/v1/volumes?q=javascript&orderBy=relevance&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ")
     .then(function(res) {
@@ -116,6 +91,39 @@ fetch("https://www.googleapis.com/books/v1/volumes?q=javascript&orderBy=relevanc
             // console.log(author)
             // console.log(bookImage[i].src)
         }
+
+    }),
+    function(error) {
+        console.log(error);
+    };
+
+
+
+topHeading = document.getElementsByClassName("topheading");
+bookAuthor = document.getElementsByClassName("book-author");
+descriptionBook = document.getElementsByClassName("description");
+booksDiv = document.getElementsByClassName("books");
+
+fetch("https://www.googleapis.com/books/v1/volumes?q=programming&orderBy=relevance&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ")
+    .then(function(res) {
+        return res.json();
+    })
+    .then(function(result) {
+        for (let i = 0; i < result.items.length; i++) {
+            title = result.items[i].volumeInfo.title;
+            author = result.items[i].volumeInfo.authors;
+            image = result.items[i].volumeInfo.imageLinks.thumbnail;
+            description = result.items[i].volumeInfo.publisher;
+            if (description === undefined) {
+                descriptionBook[i].innerHTML = "";
+            } else {
+                descriptionBook[i].innerHTML = description;
+            }
+            topHeading[i].innerHTML = title;
+            bookAuthor[i].innerHTML = author;
+            booksDiv[i].style.backgroundImage = "url(" + image + ")";
+        }
+
 
     }),
     function(error) {

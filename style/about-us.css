@@ -27,34 +27,61 @@ body {
     font-size: 16px;
     font-family: "Roboto", sans-serif;
     overflow-x: hidden;
+    background-color: #D7D9CE;
 }
 
-.about {
-    width: 60%;
-    height: auto;
-    margin: 1rem auto 1rem auto;
-    background-color: #CDD6D0;
+.about-us {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+}
+
+.aboutT {
+    grid: 1 / 2;
+}
+
+.aboutD {
+    grid: 2 / 3;
+}
+
+.aboutT,
+.aboutD {
+    width: 90%;
+    margin: 2rem auto;
+    background-color: #D7D9CE;
     border-radius: 0.5rem;
     border: 2px solid #119DA4;
     padding: 1rem;
     box-shadow: 0.1rem 0.1rem 0.1rem #0C7489;
 }
 
-.about img {
-    height: 50%;
-    width: 80%;
+.aboutT img,
+.aboutD img {
     display: block;
     margin: auto;
 }
 
-.about p,
-.about h2 {
+.aboutT p,
+.aboutD p,
+.title h2 {
     color: #0C7489;
     padding: 0.5rem;
     text-align: center;
 }
 
-.about:hover {
+.title {
+    margin: 1rem auto;
+}
+
+.aboutT:hover,
+.aboutD:hover {
     box-shadow: 0.1rem 0.1rem 0.3rem #0C7489;
     border: 2px solid #119DA4;
+}
+
+@media only screen and (max-width: 600px) {
+    .about-us {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+    }
 }
