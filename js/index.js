@@ -1,19 +1,13 @@
-titles = document.getElementsByClassName("title");
-authors = document.getElementsByClassName("author");
-row = document.getElementsByClassName("row")
-button = document.getElementsByClassName("button");
-
-
-
-
-
-
 // fetching top 10 latest books
 fetch("https://www.googleapis.com/books/v1/volumes?q=programming&orderBy=newest&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ")
     .then(function(res) {
         return res.json();
     })
     .then(function(result) {
+        titles = document.getElementsByClassName("title");
+        authors = document.getElementsByClassName("author");
+        row = document.getElementsByClassName("row")
+        button = document.getElementsByClassName("button");
         for (let i = 0; i < 10; i++) {
             title = result.items[i].volumeInfo.title;
             author = result.items[i].volumeInfo.authors;
@@ -35,11 +29,9 @@ next = document.getElementById("next");
 previous.addEventListener("click", previousSlide);
 next.addEventListener("click", nextSlide);
 current = 1;
-// for (let i = 0; i < row.length; i++) {
-
-// }
 
 
+// showing current slide
 function showSlide(x) {
     if (x > row.length) { current = 1 };
     if (x < 1) { current = row.length };
@@ -54,29 +46,27 @@ function showSlide(x) {
 
 // setInterval(nextSlide, 3000);
 
+// showing next slide when arrow clicked
 function nextSlide(x) {
     showSlide(current += 1);
-
-
 }
 
+// showing previous slide when arrow clicked
 function previousSlide(x) {
     showSlide(current -= 1);
 }
 
 
 // fetching top 3 best books
-topTitle = document.getElementsByClassName("title-top");
-topAuthor = document.getElementsByClassName("author-top");
-topDescription = document.getElementsByClassName("description-top");
-bookImage = document.getElementsByClassName("book")
-
-
 fetch("https://www.googleapis.com/books/v1/volumes?q=javascript&orderBy=relevance&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ")
     .then(function(res) {
         return res.json();
     })
     .then(function(result) {
+        topTitle = document.getElementsByClassName("title-top");
+        topAuthor = document.getElementsByClassName("author-top");
+        topDescription = document.getElementsByClassName("description-top");
+        bookImage = document.getElementsByClassName("book")
         for (let i = 0; i < 3; i++) {
             title = result.items[i].volumeInfo.title;
             author = result.items[i].volumeInfo.authors;
@@ -86,10 +76,6 @@ fetch("https://www.googleapis.com/books/v1/volumes?q=javascript&orderBy=relevanc
             topAuthor[i].innerHTML = author;
             topDescription[i].innerHTML = description;
             bookImage[i].src = image;
-            // console.log(image)
-            // console.log(title)
-            // console.log(author)
-            // console.log(bookImage[i].src)
         }
 
     }),
@@ -99,16 +85,16 @@ fetch("https://www.googleapis.com/books/v1/volumes?q=javascript&orderBy=relevanc
 
 
 
-topHeading = document.getElementsByClassName("topheading");
-bookAuthor = document.getElementsByClassName("book-author");
-descriptionBook = document.getElementsByClassName("description");
-booksDiv = document.getElementsByClassName("books");
-
-fetch("https://www.googleapis.com/books/v1/volumes?q=programming&orderBy=relevance&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ")
+// fetching top rated books
+fetch("https://www.googleapis.com/books/v1/volumes?q=html&orderBy=relevance&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ")
     .then(function(res) {
         return res.json();
     })
     .then(function(result) {
+        topHeading = document.getElementsByClassName("topheading");
+        bookAuthor = document.getElementsByClassName("book-author");
+        descriptionBook = document.getElementsByClassName("description");
+        booksDiv = document.getElementsByClassName("books");
         for (let i = 0; i < result.items.length; i++) {
             title = result.items[i].volumeInfo.title;
             author = result.items[i].volumeInfo.authors;
@@ -122,10 +108,22 @@ fetch("https://www.googleapis.com/books/v1/volumes?q=programming&orderBy=relevan
             topHeading[i].innerHTML = title;
             bookAuthor[i].innerHTML = author;
             booksDiv[i].style.backgroundImage = "url(" + image + ")";
-        }
 
+        }
 
     }),
     function(error) {
         console.log(error);
     };
+
+loadBtn = document.getElementsByClassName("load-more")[0];
+loadBtn.addEventListener("click", loadMore);
+topRated = document.getElementsByClassName("top-rated")[0];
+
+function loadMore() {
+    for (let i = 6; i < booksDiv.length - 1; i++) {
+        topRated.style.height = "130vh";
+        booksDiv[i].style.display = "block";
+        loadBtn.style.display = "none";
+    }
+}
