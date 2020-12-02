@@ -60,7 +60,7 @@ function showSlide(x) {
     }
 }
 
-// setInterval(nextSlide, 3000);
+setInterval(nextSlide, 3000);
 
 // showing next slide when arrow clicked
 function nextSlide(x) {
