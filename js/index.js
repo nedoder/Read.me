@@ -36,6 +36,8 @@ previous = document.getElementById("previous");
 next = document.getElementById("next");
 previous.addEventListener("click", previousSlide);
 next.addEventListener("click", nextSlide);
+document.addEventListener('keydown', nextKeySlide);
+document.addEventListener('keydown', previousKeySlide);
 current = 1;
 
 
@@ -46,10 +48,16 @@ function showSlide(x) {
     for (let i = 0; i < row.length; i++) {
         row[i].style.display = "none";
     }
-    row[current - 1].style.display = "block";
-    row[current].style.display = "block";
-    row[current + 1].style.display = "block";
-
+    if (window.innerWidth <= 768) {
+        row[current].style.display = "block";
+    } else if (window.innerWidth <= 992) {
+        row[current].style.display = "block";
+        row[current + 1].style.display = "block";
+    } else {
+        row[current - 1].style.display = "block";
+        row[current].style.display = "block";
+        row[current + 1].style.display = "block";
+    }
 }
 
 // setInterval(nextSlide, 3000);
@@ -64,6 +72,22 @@ function previousSlide(x) {
     showSlide(current -= 1);
 }
 
+//showing next slide when keyboard key pressed
+function nextKeySlide(e) {
+    e.preventDefault();
+    if (e.keyCode === 39) {
+        nextSlide(e);
+    }
+
+}
+
+//showing previous slide when keyboard key pressed
+function previousKeySlide(e) {
+    e.preventDefault();
+    if (e.keyCode === 37) {
+        previousSlide(e);
+    }
+}
 
 // fetching top 3 best books
 fetch("https://www.googleapis.com/books/v1/volumes?q=javascript&orderBy=relevance&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ")
@@ -118,8 +142,8 @@ fetch("https://www.googleapis.com/books/v1/volumes?q=html&orderBy=relevance&key=
             author = result.items[i].volumeInfo.authors;
             image = result.items[i].volumeInfo.imageLinks.thumbnail;
             description = result.items[i].volumeInfo.publisher;
-            subtitleBest = result.items[i].volumeInfo.subtitle;
-            descB = result.items[i].volumeInfo.description;
+            subtitleBest = result.items[i].volumeInfo.publishedDate;
+            describe = result.items[i].volumeInfo.description;
             if (description === undefined) {
                 descriptionBook[i].innerHTML = "";
             } else {
@@ -129,7 +153,7 @@ fetch("https://www.googleapis.com/books/v1/volumes?q=html&orderBy=relevance&key=
             bookAuthor[i].innerHTML = author;
             booksDiv[i].style.backgroundImage = "url(" + image + ")";
             subBest[i].innerHTML = subtitleBest;
-            descBest[i].innerHTML = descB;
+            descBest[i].innerHTML = describe;
             imgBest[i].src = image;
 
         }
@@ -139,14 +163,46 @@ fetch("https://www.googleapis.com/books/v1/volumes?q=html&orderBy=relevance&key=
         console.log(error);
     };
 
+//loading more content
 loadBtn = document.getElementsByClassName("load-more")[0];
 loadBtn.addEventListener("click", loadMore);
 topRated = document.getElementsByClassName("top-rated")[0];
+helper = 0;
+helper2 = 2
+helper3 = 3;
 
 function loadMore() {
-    for (let i = 6; i < booksDiv.length - 1; i++) {
-        topRated.style.height = "130vh";
-        booksDiv[i].style.display = "block";
-        loadBtn.style.display = "none";
+    helper++;
+    helper2 += 2;
+    helper3 += 3;
+    for (let i = 0; i < booksDiv.length; i++) {
+        topRated.style.height = "150vh";
+        if (window.innerWidth <= 768) {
+            booksDiv[helper].style.display = "block";
+            if (helper === booksDiv.length - 1) {
+                loadBtn.style.display = "none";
+            }
+        } else if (window.innerWidth <= 992) {
+            booksDiv[helper2].style.display = "block";
+            booksDiv[helper2 + 1].style.display = "block";
+            if (helper2 === booksDiv.length - 2) {
+                loadBtn.style.display = "none";
+            }
+        } else {
+            booksDiv[helper3].style.display = "block";
+            if ((helper3 + 1) <= booksDiv.length - 1) {
+                booksDiv[helper3 + 1].style.display = "block";
+            } else {
+                loadBtn.style.display = "none";
+            }
+            if ((helper3 + 2) <= booksDiv.length - 2) {
+                booksDiv[helper3 + 2].style.display = "block";
+            } else {
+                loadBtn.style.display = "none";
+            }
+
+
+        }
+
     }
 }

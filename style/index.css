@@ -286,6 +286,7 @@
     
     .modal-content p {
         line-height: 1rem;
+        font-size: 0.8rem;
     }
     
     .modal button {
@@ -293,6 +294,33 @@
         color: #D7D9CE;
         border: none;
         outline: none;
+    }
+    
+    @media only screen and (max-width: 992px) {
+        body {
+            font-size: 15px;
+        }
+        .books,
+        .row {
+            width: 45%;
+        }
+        .fb-feed iframe {
+            width: 15rem;
+        }
+        .row:nth-child(3),
+        .books:nth-child(3),
+        .books:nth-child(4),
+        .books:nth-child(5),
+        .books:nth-child(6) {
+            display: none;
+        }
+        .modal-content {
+            font-size: 0.8rem;
+        }
+        .modal-content p {
+            line-height: 1rem;
+            font-size: 0.5rem;
+        }
     }
     
     @media only screen and (max-width: 768px) {
@@ -314,6 +342,15 @@
         .books:nth-child(5),
         .books:nth-child(6) {
             display: none;
+        }
+        .modal-content {
+            column-gap: 0.3rem;
+            padding: 0.2rem;
+            grid-template-columns: 80% 20%;
+        }
+        .modal-content p {
+            line-height: 1rem;
+            font-size: 0.5rem;
         }
     }
     
@@ -343,6 +380,14 @@
         .grid,
         .second-grid {
             grid-template-columns: auto;
+        }
+        .modal-content {
+            column-gap: 0.3rem;
+            padding: 0.2rem;
+            grid-template-columns: auto;
+        }
+        .modal-content p {
+            display: none;
         }
     }
     
