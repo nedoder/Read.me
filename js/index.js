@@ -118,8 +118,8 @@ fetch("https://www.googleapis.com/books/v1/volumes?q=html&orderBy=relevance&key=
             author = result.items[i].volumeInfo.authors;
             image = result.items[i].volumeInfo.imageLinks.thumbnail;
             description = result.items[i].volumeInfo.publisher;
-            subtitleBest = result.items[i].volumeInfo.subtitle;
-            descB = result.items[i].volumeInfo.description;
+            subtitleBest = result.items[i].volumeInfo.publishedDate;
+            describe = result.items[i].volumeInfo.description;
             if (description === undefined) {
                 descriptionBook[i].innerHTML = "";
             } else {
@@ -129,7 +129,7 @@ fetch("https://www.googleapis.com/books/v1/volumes?q=html&orderBy=relevance&key=
             bookAuthor[i].innerHTML = author;
             booksDiv[i].style.backgroundImage = "url(" + image + ")";
             subBest[i].innerHTML = subtitleBest;
-            descBest[i].innerHTML = descB;
+            descBest[i].innerHTML = describe;
             imgBest[i].src = image;
 
         }
@@ -144,7 +144,7 @@ loadBtn.addEventListener("click", loadMore);
 topRated = document.getElementsByClassName("top-rated")[0];
 
 function loadMore() {
-    for (let i = 6; i < booksDiv.length - 1; i++) {
+    for (let i = 6; i < booksDiv.length; i++) {
         topRated.style.height = "130vh";
         booksDiv[i].style.display = "block";
         loadBtn.style.display = "none";
