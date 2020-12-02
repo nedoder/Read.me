@@ -6,15 +6,23 @@ fetch("https://www.googleapis.com/books/v1/volumes?q=programming&orderBy=newest&
     .then(function(result) {
         titles = document.getElementsByClassName("title");
         authors = document.getElementsByClassName("author");
-        row = document.getElementsByClassName("row")
+        row = document.getElementsByClassName("row");
+        subt = document.getElementsByClassName("latest-subtitle");
+        descrp = document.getElementsByClassName("latest-description");
+        img = document.getElementsByClassName("latest-image");
         button = document.getElementsByClassName("button");
         for (let i = 0; i < 10; i++) {
             title = result.items[i].volumeInfo.title;
             author = result.items[i].volumeInfo.authors;
             image = result.items[i].volumeInfo.imageLinks.thumbnail;
+            sub = result.items[i].volumeInfo.subtitle;
+            descr = result.items[i].volumeInfo.description;
             titles[i].innerHTML = title;
             authors[i].innerHTML = author;
             row[i].style.backgroundImage = "url(" + image + ")";
+            descrp[i].innerHTML = descr;
+            img[i].src = image;
+            subt[i].innerHTML = sub;
         }
 
     }),
@@ -67,15 +75,22 @@ fetch("https://www.googleapis.com/books/v1/volumes?q=javascript&orderBy=relevanc
         topAuthor = document.getElementsByClassName("author-top");
         topDescription = document.getElementsByClassName("description-top");
         bookImage = document.getElementsByClassName("book")
+        subTop = document.getElementsByClassName("subtitleTop");
+        descTop = document.getElementsByClassName("descriptionTop");
         for (let i = 0; i < 3; i++) {
             title = result.items[i].volumeInfo.title;
             author = result.items[i].volumeInfo.authors;
             image = result.items[i].volumeInfo.imageLinks.thumbnail;
             description = result.items[i].volumeInfo.publisher;
+            sub = result.items[i].volumeInfo.subtitle;
+            publishes = result.items[i].volumeInfo.publishedDate;
+            desc = result.items[i].volumeInfo.description;
             topTitle[i].innerHTML = title;
             topAuthor[i].innerHTML = author;
             topDescription[i].innerHTML = description;
             bookImage[i].src = image;
+            subTop[i].innerHTML = sub;
+            descTop[i].innerHTML = desc;
         }
 
     }),
@@ -95,11 +110,16 @@ fetch("https://www.googleapis.com/books/v1/volumes?q=html&orderBy=relevance&key=
         bookAuthor = document.getElementsByClassName("book-author");
         descriptionBook = document.getElementsByClassName("description");
         booksDiv = document.getElementsByClassName("books");
+        subBest = document.getElementsByClassName("subtitleBest");
+        descBest = document.getElementsByClassName("descriptionBest");
+        imgBest = document.getElementsByClassName("imageBest")
         for (let i = 0; i < result.items.length; i++) {
             title = result.items[i].volumeInfo.title;
             author = result.items[i].volumeInfo.authors;
             image = result.items[i].volumeInfo.imageLinks.thumbnail;
             description = result.items[i].volumeInfo.publisher;
+            subtitleBest = result.items[i].volumeInfo.subtitle;
+            descB = result.items[i].volumeInfo.description;
             if (description === undefined) {
                 descriptionBook[i].innerHTML = "";
             } else {
@@ -108,6 +128,9 @@ fetch("https://www.googleapis.com/books/v1/volumes?q=html&orderBy=relevance&key=
             topHeading[i].innerHTML = title;
             bookAuthor[i].innerHTML = author;
             booksDiv[i].style.backgroundImage = "url(" + image + ")";
+            subBest[i].innerHTML = subtitleBest;
+            descBest[i].innerHTML = descB;
+            imgBest[i].src = image;
 
         }
 
