@@ -165,6 +165,7 @@
         border-radius: 0.5rem;
         background-repeat: no-repeat;
         background-size: 100% 100%;
+        box-shadow: 0.2rem 0.2rem 0.5rem #13505B;
     }
     
     .latest-subtitle,
@@ -226,6 +227,9 @@
         margin: 0.1rem 0;
         display: grid;
         grid-template-columns: auto auto;
+        border-radius: 0.5rem;
+        padding: 0.1rem;
+        box-shadow: 0.2rem 0.2rem 0.5rem #13505B;
     }
     
     .leftimage img,
@@ -256,6 +260,7 @@
         border: none;
         height: 30rem;
         max-width: 20rem;
+        box-shadow: 0.2rem 0.2rem 0.5rem #13505B;
     }
     
     .modal {
