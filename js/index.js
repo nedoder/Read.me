@@ -48,10 +48,16 @@ function showSlide(x) {
     for (let i = 0; i < row.length; i++) {
         row[i].style.display = "none";
     }
-    row[current - 1].style.display = "block";
-    row[current].style.display = "block";
-    row[current + 1].style.display = "block";
-
+    if (window.innerWidth <= 768) {
+        row[current].style.display = "block";
+    } else if (window.innerWidth <= 992) {
+        row[current].style.display = "block";
+        row[current + 1].style.display = "block";
+    } else {
+        row[current - 1].style.display = "block";
+        row[current].style.display = "block";
+        row[current + 1].style.display = "block";
+    }
 }
 
 // setInterval(nextSlide, 3000);
@@ -157,14 +163,46 @@ fetch("https://www.googleapis.com/books/v1/volumes?q=html&orderBy=relevance&key=
         console.log(error);
     };
 
+//loading more content
 loadBtn = document.getElementsByClassName("load-more")[0];
 loadBtn.addEventListener("click", loadMore);
 topRated = document.getElementsByClassName("top-rated")[0];
+helper = 0;
+helper2 = 2
+helper3 = 3;
 
 function loadMore() {
-    for (let i = 6; i < booksDiv.length; i++) {
-        topRated.style.height = "130vh";
-        booksDiv[i].style.display = "block";
-        loadBtn.style.display = "none";
+    helper++;
+    helper2 += 2;
+    helper3 += 3;
+    for (let i = 0; i < booksDiv.length; i++) {
+        topRated.style.height = "150vh";
+        if (window.innerWidth <= 768) {
+            booksDiv[helper].style.display = "block";
+            if (helper === booksDiv.length - 1) {
+                loadBtn.style.display = "none";
+            }
+        } else if (window.innerWidth <= 992) {
+            booksDiv[helper2].style.display = "block";
+            booksDiv[helper2 + 1].style.display = "block";
+            if (helper2 === booksDiv.length - 2) {
+                loadBtn.style.display = "none";
+            }
+        } else {
+            booksDiv[helper3].style.display = "block";
+            if ((helper3 + 1) <= booksDiv.length - 1) {
+                booksDiv[helper3 + 1].style.display = "block";
+            } else {
+                loadBtn.style.display = "none";
+            }
+            if ((helper3 + 2) <= booksDiv.length - 2) {
+                booksDiv[helper3 + 2].style.display = "block";
+            } else {
+                loadBtn.style.display = "none";
+            }
+
+
+        }
+
     }
 }
