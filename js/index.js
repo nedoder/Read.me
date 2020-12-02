@@ -36,6 +36,8 @@ previous = document.getElementById("previous");
 next = document.getElementById("next");
 previous.addEventListener("click", previousSlide);
 next.addEventListener("click", nextSlide);
+document.addEventListener('keydown', nextKeySlide);
+document.addEventListener('keydown', previousKeySlide);
 current = 1;
 
 
@@ -64,6 +66,22 @@ function previousSlide(x) {
     showSlide(current -= 1);
 }
 
+//showing next slide when keyboard key pressed
+function nextKeySlide(e) {
+    e.preventDefault();
+    if (e.keyCode === 39) {
+        nextSlide(e);
+    }
+
+}
+
+//showing previous slide when keyboard key pressed
+function previousKeySlide(e) {
+    e.preventDefault();
+    if (e.keyCode === 37) {
+        previousSlide(e);
+    }
+}
 
 // fetching top 3 best books
 fetch("https://www.googleapis.com/books/v1/volumes?q=javascript&orderBy=relevance&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ")
