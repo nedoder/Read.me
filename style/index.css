@@ -188,6 +188,7 @@
         outline: none;
         border: none;
         box-shadow: 0 0 0.5rem #13505B;
+        margin: 0.5rem auto;
     }
     
     .btn button:hover,
@@ -217,6 +218,7 @@
         display: flex;
         flex-direction: column;
         height: 100%;
+        column-gap: 0.3rem;
     }
     
     .leftimage,
