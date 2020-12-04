@@ -1,6 +1,6 @@
-    var lat  = 42.4304;
-    var lon =  19.2594;
-    var zoom = 18;
+var lat            = 47.35387;
+    var lon            = 8.43609;
+    var zoom           = 18;
 
     var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
     var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
@@ -15,7 +15,6 @@
     markers.addMarker(new OpenLayers.Marker(position));
 
     map.setCenter(position, zoom);
-
 
 const form = document.getElementById('form');
 const username = document.getElementById('username');

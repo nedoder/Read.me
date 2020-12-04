@@ -8,38 +8,51 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../style/about-us.css" rel="stylesheet">
-    <link href="../style/header.css" rel="stylesheet">
     <link href="../style/nav.css" rel="stylesheet">
     <link href="../style/footer.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <div class="header" id="header">
-        <img src="../images/Readme-Logo.png" alt="Logo" class="logo">
-        <input type="text" placeholder="Search for books..." name="search" class="search">
-        <button class="login">Log in</button>
-        <button class="signup">Sign up</button>
-    </div>
     <div class="nav">
+        <img src="../images/Readme-Logo.png" alt="Logo" class="logo">
+        <div class="dropdown-small">
+            <button class="menu"><i class="fa fa-bars fa-2x"></i></button>
+            <button class="close"><i class="fa fa-times fa-2x"></i></button>
+            <!--navbar for small screens-->
+            <div class="menu-dropdown">
+                <a href="../index.html" class="links">Home</a>
+                <a href="./list.html" class="links">List</a>
+                <a href="./custom.html" class="links">Custom</a>
+                <a href="#header" class="links active">About us</a>
+            </div>
+        </div>
         <div class="dropdown">
             <button class="dropdown-button">See more <i class="fa fa-caret-down"></i></button>
             <div class="dropdown-links   animate__animated animate__fadeInRight">
-                <a href="./custom.html" target="_blank">Custom</a>
-                <a href="#header" target="_blank">About us</a>
-                <a href="#footer">Contact us</a>
+                <a href="http://novaknjiga.com/gknjizara/" target="_blank" class="big-links">Shop now</a>
+                <a href="https://www.udemy.com/" target="_blank" class="big-links">Courses</a>
+                <a href="#footer" class="big-links">Contact us</a>
             </div>
         </div>
-        <a href="./list.html" target="_blank">List</a>
-        <a href="../index.html">Home</a>
+        <a href="#header" class="big-links active">About us</a>
+        <a href="./custom.html" class="big-links">Custom</a>
+        <a href="./list.html" class="big-links">List</a>
+        <a href="../index.html" class="big-links">Home</a>
     </div>
-
-    <div class="about animate__animated animate__bounceInLeft">
+    <div class="title">
         <h2>About us &#45; Grupa 3</h2>
-        <img src="../images/about-us.png" alt="About us">
-        <p>Hello&#33; I&#39;m Tatjana Doderović&#33; Lately&#44; I&#39;m learning HTML&#44; CSS and JavaScript with a lot of enthusiastic people in Developers Lab&#33; This is my first project&#44; I hope you like it&#33;</p>
     </div>
-
+    <div class="about-us">
+        <div class="aboutT animate__animated animate__zoomIn">
+            <img src="../images/about-us.png" alt="About us">
+            <p>Hello&#33; I&#39;m Tatjana Doderovićc&#33; Lately&#44; I&#39;m learning HTML&#44; CSS and JavaScript with a lot of enthusiastic people in Developers Lab&#33; This is my first project&#44; I hope you like it&#33;</p>
+        </div>
+        <div class="aboutD animate__animated animate__zoomIn">
+            <img src="../images/about-us2.png" alt="About us">
+            <p>Hi&#33; I&#39;m Danilo Šofranac&#33; I&#39;m learning HTML&#44; CSS and JavaScript in Developers Lab and I find the course very inspiring&#33; This is my first project&#44; I hope you like it&#33;</p>
+        </div>
+    </div>
     <footer class="footer" id="footer">
         <div class="grid-container">
             <div class="footer-followus">
@@ -52,9 +65,9 @@
             <div class="footer-contact">
                 <p> Contact Us</p>
                 <a href="#"><i class="fa fa-phone"></i> 067396283</a>
-                <a href="#"><i class="fa fa-map-marker"></i> Jerevanska 38, Podgorica</a>
+                <a href="#"><i class="fa fa-map-marker"></i> 81000&#44; Podgorica</a>
                 <a href="#"><i class="fa fa-envelope"></i> nedoder89@gmail.com</a>
-                <a href="#"><i class="fa fa-paint-brush"></i> Designed with love by nedoder</a>
+                <a href="#"><i class="fa fa-paint-brush"></i> Designed by Grupa 3</a>
             </div>
             <div class="footer-guides">
                 <p>Learn more</p>
@@ -65,9 +78,9 @@
             </div>
             <div class="footer-navigation">
                 <p>Site navigation</p>
-                <a href="../index.html"><i class="fa fa-home"></i> Home</a>
-                <a href="./custom.html"><i class="fa fa-link"></i> List</a>
-                <a href="./custom.html"><i class="fa fa-image"></i> Custom</a>
+                <a href="../index.html" target="_blank"><i class="fa fa-home"></i> Home</a>
+                <a href="./custom.html" target="_blank"><i class="fa fa-link"></i> List</a>
+                <a href="./custom.html" target="_blank"><i class="fa fa-image"></i> Custom</a>
                 <a href="#header"><i class="fa fa-info"></i> About us</a>
             </div>
         </div>
@@ -78,7 +91,7 @@
 
     </footer>
 
-    <script src=""></script>
+    <script src="../js/nav.js"></script>
 </body>
 
 </html>

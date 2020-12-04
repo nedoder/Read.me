@@ -1,7 +1,7 @@
 .nav {
     overflow: hidden;
-    background-color: #E16036;
-    box-shadow: 0rem 0.5rem 0.6rem #CDD6D0;
+    background-color: #13505B;
+    box-shadow: 0rem 0.1rem 0.3rem #119DA4;
 }
 
 .nav a {
@@ -14,6 +14,10 @@
     font-size: 1rem;
 }
 
+.active {
+    background-color: #119DA4;
+}
+
 .dropdown {
     float: right;
     overflow: hidden;
@@ -24,22 +28,22 @@
     outline: none;
     color: white;
     padding: 1rem;
-    background-color: #E16036;
+    background-color: #13505B;
     margin: 0;
     font-size: 1rem;
 }
 
 .nav a:hover,
 .dropdown:hover .dropdown-button {
-    background-color: #E3170A;
+    background-color: #119DA4;
 }
 
 .dropdown-links {
     display: none;
     position: absolute;
-    background-color: #E16036;
+    background-color: #13505B;
     width: 7.4rem;
-    box-shadow: 0rem 0.5rem 0.6rem #CDD6D0;
+    box-shadow: 0rem 0.1rem 0.2rem #119DA4;
     z-index: 1;
 }
 
@@ -53,10 +57,82 @@
 }
 
 .dropdown-links a:hover {
-    background-color: #E3170A;
+    background-color: #119DA4;
     overflow: hidden;
 }
 
 .dropdown:hover .dropdown-links {
     display: block;
+}
+
+.nav img {
+    margin: 0.4rem 0rem 0rem 1rem;
+}
+
+
+/* for small screens */
+
+.dropdown-small {
+    float: right;
+    margin: 1rem;
+    display: none;
+}
+
+.menu-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #13505B;
+    width: 10rem;
+    z-index: 100;
+    right: 0;
+    top: 3.65rem;
+}
+
+.menu-dropdown a {
+    float: none;
+    color: #D7D9CE;
+    text-decoration: none;
+    display: block;
+}
+
+.menu-dropdown a:hover {
+    background-color: #119DA4;
+}
+
+.dropdown-small:hover,
+.dropdown-menu:hover {
+    display: block;
+}
+
+.dropdown-small .menu,
+.close {
+    background-color: #13505B;
+    outline: none;
+    border: none;
+    float: right;
+}
+
+.close {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 13px;
+    }
+    .dropdown-small {
+        display: block;
+    }
+    .menu-dropdown {
+        display: block;
+    }
+    .nav a {
+        display: none;
+    }
+    .menu-dropdown a {
+        display: none;
+    }
+    .dropdown-button {
+        display: none;
+    }
 }
