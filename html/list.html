@@ -41,31 +41,36 @@
         <div class="dropdown">
             <button class="dropdown-button">List <i class="fa fa-caret-down"></i></button>
             <div class="dropdown-links   animate__animated animate__fadeInRight">
-                <a id="button1"  class="big-links">Drama</a>
-                <a id="button2"  class="big-links">Humor</a>
+                <a id="button1" class="big-links">Drama</a>
+                <a id="button2" class="big-links">Humor</a>
                 <a id="button3" class="big-links">Travel</a>
             </div>
         </div>
         <a href="../index.html" class="big-links">Home</a>
     </div>
-    
-      
-    <div class="container">
-      <div>
-          <h1 class="container__heading">Search all books</h1>
-      </div>
-      <div class="row"> 
-          <div id="search">
-            <input class="search-area" type="text" class="searchTerm" placeholder="Enter book name">
-          </div>
-      </div>
-      <div class="row">
-          <div class="col-sm">
-              <ul id="books-list" class="list-group"></ul>
-          </div>
-      </div>   
 
-  </div>
+
+    <div class="container">
+        <div>
+            <h1 class="container__heading">Search all books</h1>
+        </div>
+        <div class="row">
+            <div id="search">
+                <input class="search-area" type="text" class="searchTerm" placeholder="Enter book name" id="searchMe">
+                <div class="radioButtons">
+                    <div class="radioButtons__div"><input type="radio" id="nameButton" name="gender" value="Name"><label for="Name" class="labels">Name</label><br></div>
+                    <div class="radioButtons__div"><input type="radio" id="dramaButton" name="gender" value="Drama"><label for="Drama" class="labels">Books</label><br></div>
+                    <div class="radioButtons__div"><input type="radio" id="humorButton" name="gender" value="Humor"><label for="Humor" class="labels">Magazines</label><br></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <ul id="books-list" class="list-group"></ul>
+            </div>
+        </div>
+
+    </div>
 
 
 
