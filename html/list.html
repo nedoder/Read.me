@@ -11,6 +11,7 @@
     <link href="../style/nav.css" rel="stylesheet">
     <link href="../style/footer.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </head>
 
 <body>
@@ -37,9 +38,40 @@
         </div>
         <a href="./about-us.html" class="big-links">About us</a>
         <a href="./custom.html" class="big-links">Custom</a>
-        <a href="#header" class="big-links active">List</a>
+        <div class="dropdown">
+            <button class="dropdown-button">List <i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-links   animate__animated animate__fadeInRight">
+                <a id="button1" class="big-links">Drama</a>
+                <a id="button2" class="big-links">Humor</a>
+                <a id="button3" class="big-links">Travel</a>
+            </div>
+        </div>
         <a href="../index.html" class="big-links">Home</a>
     </div>
+
+
+    <div class="container">
+        <div>
+            <h1 class="container__heading">Search all books</h1>
+        </div>
+        <div class="row">
+            <div id="search">
+                <input class="search-area" type="text" class="searchTerm" placeholder="Enter book name" id="searchMe">
+                <div class="radioButtons">
+                    <div class="radioButtons__div"><input type="radio" id="nameButton" name="gender" value="Name"><label for="Name" class="labels">Name</label><br></div>
+                    <div class="radioButtons__div"><input type="radio" id="dramaButton" name="gender" value="Drama"><label for="Drama" class="labels">Books</label><br></div>
+                    <div class="radioButtons__div"><input type="radio" id="humorButton" name="gender" value="Humor"><label for="Humor" class="labels">Magazines</label><br></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <ul id="books-list" class="list-group"></ul>
+            </div>
+        </div>
+
+    </div>
+
 
 
     <footer class="footer" id="footer">
@@ -80,6 +112,7 @@
 
     </footer>
 
+    <script src="../js/list.js"></script>
     <script src="../js/nav.js"></script>
 </body>
 
