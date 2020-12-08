@@ -1,20 +1,20 @@
-var lat            = 47.35387;
-    var lon            = 8.43609;
-    var zoom           = 18;
+var lat = 42.442574;
+var lon = 19.268646;
+var zoom = 18;
 
-    var fromProjection = new OpenLayers.Projection("EPSG:4326");   // Transform from WGS 1984
-    var toProjection   = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
-    var position       = new OpenLayers.LonLat(lon, lat).transform( fromProjection, toProjection);
+var fromProjection = new OpenLayers.Projection("EPSG:4326"); // Transform from WGS 1984
+var toProjection = new OpenLayers.Projection("EPSG:900913"); // to Spherical Mercator Projection
+var position = new OpenLayers.LonLat(lon, lat).transform(fromProjection, toProjection);
 
-    map = new OpenLayers.Map("Map");
-    var mapnik         = new OpenLayers.Layer.OSM();
-    map.addLayer(mapnik);
+map = new OpenLayers.Map("Map");
+var mapnik = new OpenLayers.Layer.OSM();
+map.addLayer(mapnik);
 
-    var markers = new OpenLayers.Layer.Markers( "Markers" );
-    map.addLayer(markers);
-    markers.addMarker(new OpenLayers.Marker(position));
+var markers = new OpenLayers.Layer.Markers("Markers");
+map.addLayer(markers);
+markers.addMarker(new OpenLayers.Marker(position));
 
-    map.setCenter(position, zoom);
+map.setCenter(position, zoom);
 
 const form = document.getElementById('form');
 const username = document.getElementById('username');
@@ -39,7 +39,7 @@ function showSuccess(input) {
 //check email is valid
 function checkEmail(input) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if(re.test(input.value.trim())) {
+    if (re.test(input.value.trim())) {
         showSuccess(input);
     } else {
         showError(input, 'Email is not valid');
@@ -49,11 +49,11 @@ function checkEmail(input) {
 //check required fields
 function checkRequired(inputArr) {
     inputArr.forEach(function(input) {
-       if(input.value.trim() === '') {
+        if (input.value.trim() === '') {
             showError(input, `${getFieldName(input)} is required`);
-       } else {
-           showSuccess(input);
-       }
+        } else {
+            showSuccess(input);
+        }
     })
 }
 
@@ -64,18 +64,18 @@ function getFieldName(input) {
 
 //check input length
 function checkLength(input, min, max) {
-    if(input.value.length < min) {
+    if (input.value.length < min) {
         showError(input, `${getFieldName(input)} must be at least ${min} characters`);
-    } else if(input.value.length > max) {
+    } else if (input.value.length > max) {
         showError(input, `${getFieldName(input)} must be less than ${max} characters`);
-    }  else {
+    } else {
         showSuccess(input);
     }
 }
 
 //do password match
 function checkPasswordMatch(input1, input2) {
-    if(input1.value !== input2.value) {
+    if (input1.value !== input2.value) {
         showError(input2, 'Passwords do not match');
     }
 }
@@ -83,7 +83,7 @@ function checkPasswordMatch(input1, input2) {
 //event listeners
 form.addEventListener('submit', function(e) {
     e.preventDefault();
-    
+
     checkRequired([username, email, password, password2]);
     checkLength(username, 3, 15);
     checkLength(password, 6, 25);

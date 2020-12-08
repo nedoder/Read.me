@@ -1,63 +1,7 @@
-// document.getElementById('button1').addEventListener('click', getExternal);
-// document.getElementById('button2').addEventListener('click', getFreeBooks);
-// document.getElementById('button3').addEventListener('click', getPaidBooks);
-
-
-// Get from external API
-// function getExternal() {
-//     fetch("https://www.googleapis.com/books/v1/volumes?q=subject:comedy&filter=ebooks&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ")
-//       .then(function(res){
-//         return res.json();
-//       })
-//       .then(function(data) {
-//         var titles = [];
-//         const img = document.getElementsByClassName('thumbnail');
-//         data.items.forEach(function(e,i){
-//           img[i].src = e.volumeInfo.imageLinks.thumbnail;
-//           titles.push(e.volumeInfo.title, img);
-//         });
-//         document.getElementById('output').innerHTML = titles;
-//          })
-//       .catch(function(err){
-//         console.log(err);
-//       });
-//   }
-
-// function getFreeBooks() {
-//   fetch("https://www.googleapis.com/books/v1/volumes?q=subject:fiction&filter=ebooks&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ")
-//     .then(function(res){
-//       return res.json();
-//     })
-//     .then(function(data) {
-//       var titles = [];
-//       data.items.forEach(function(e,i){titles.push(e.volumeInfo.title);});
-//       document.getElementById('output').innerHTML = titles;
-//       })
-//     .catch(function(err){
-//       console.log(err);
-//     });
-
-//   }
-
-// function getPaidBooks() {
-//   fetch("https://www.googleapis.com/books/v1/volumes?q=subject:drama&filter=ebooks&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ")
-//     .then(function(res){
-//       return res.json();
-//     })
-//     .then(function(data) {
-//       var titles = [];
-//       data.items.forEach(function(e,i){titles.push(e.volumeInfo.title);});
-//       document.getElementById('output').innerHTML = titles;
-//       })
-//     .catch(function(err){
-//       console.log(err);
-//     });
-// }
-
 //button 1
 document.getElementById('button1').addEventListener('click', (event) => {
     const input = document.querySelector('input');
-    // const button = document.getElementById('button1');
+
     const booksList = document.getElementById('books-list');
 
     const renderBooks = (book) => {
@@ -88,6 +32,7 @@ document.getElementById('button1').addEventListener('click', (event) => {
         bookThumbnail.classList.add('col-md-2', 'rwd');
 
         booksList.appendChild(li);
+
     }
 
     const prefomSearch = () => {
@@ -167,6 +112,7 @@ document.getElementById('button2').addEventListener('click', (event) => {
 
 
 });
+
 //button3
 document.getElementById('button3').addEventListener('click', (event) => {
     const input = document.querySelector('input');
@@ -417,14 +363,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                         console.log(`Fetch api error: ${err}`);
                     });
             }
-            //   fetch(searchURI)
-            //   .then(resp => resp.json())
-            //   .then(resp => {
-            //       return resp.items.map(book => renderBooks(book))   
-            //   } )   
-            //   .catch((err) => {
-            //       console.log(`Fetch api error: ${err}`);       
-            //   }); 
+
         }
         input.value = input.defaultValue;
     }
