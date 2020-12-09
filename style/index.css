@@ -375,12 +375,12 @@
         }
         .first-block,
         .third-block {
-            width: 100%;
+            width: 90%;
             margin: auto;
         }
         .latest,
         .top-rated {
-            width: 100%;
+            width: 90%;
             height: 80vh;
             margin: auto;
         }
