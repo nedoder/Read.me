@@ -35,15 +35,15 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
-    margin-bottom: 10rem;
+    margin-bottom: 20rem;
 }
 
 .aboutT {
-    grid-column: 1 / 2;
+    grid: 1 / 2;
 }
 
 .aboutD {
-    grid-column: 2 / 3;
+    grid: 2 / 3;
 }
 
 .aboutT,
@@ -86,6 +86,10 @@ body {
 @media only screen and (max-width: 600px) {
     .about-us {
         grid-template-columns: auto;
-        grid-template-rows: auto auto;
+        row-gap: 1rem;
+    }
+    .aboutT,
+    .aboutD {
+        margin: auto;
     }
 }

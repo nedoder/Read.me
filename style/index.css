@@ -168,6 +168,10 @@
         box-shadow: 0.2rem 0.2rem 0.5rem #13505B;
     }
     
+    .books {
+        height: 50vh;
+    }
+    
     .latest-subtitle,
     .latest-description,
     .latest-image,
@@ -383,6 +387,9 @@
             width: 90%;
             height: 80vh;
             margin: auto;
+        }
+        .top-rated {
+            height: auto;
         }
         .grid,
         .second-grid {
