@@ -1,7 +1,10 @@
+function updateTextInput(val) {
+    document.getElementById('textInput').value = val;
+}
+
 //button 1
 document.getElementById('button1').addEventListener('click', (event) => {
     const input = document.querySelector('input');
-
     const booksList = document.getElementById('books-list');
 
     const renderBooks = (book) => {
@@ -32,13 +35,12 @@ document.getElementById('button1').addEventListener('click', (event) => {
         bookThumbnail.classList.add('col-md-2', 'rwd');
 
         booksList.appendChild(li);
-
     }
 
     const prefomSearch = () => {
 
         booksList.innerHTML = "";
-        const searchURI = `https://www.googleapis.com/books/v1/volumes?q=subject:drama&filter=ebooks&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ`;
+        const searchURI = `https://www.googleapis.com/books/v1/volumes?q=programming&orderBy=newest&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ`;
 
         fetch(searchURI)
             .then(resp => resp.json())
@@ -54,12 +56,11 @@ document.getElementById('button1').addEventListener('click', (event) => {
 
     prefomSearch();
 
-});
 
-//button2
+});
+//button 2
 document.getElementById('button2').addEventListener('click', (event) => {
     const input = document.querySelector('input');
-    // const button = document.getElementById('button1');
     const booksList = document.getElementById('books-list');
 
     const renderBooks = (book) => {
@@ -95,7 +96,8 @@ document.getElementById('button2').addEventListener('click', (event) => {
     const prefomSearch = () => {
 
         booksList.innerHTML = "";
-        const searchURI = `https://www.googleapis.com/books/v1/volumes?q=subject:humor&filter=ebooks&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ`;
+        const searchURI = `https://www.googleapis.com/books/v1/volumes?q=html&orderBy=relevance&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ`;
+
         fetch(searchURI)
             .then(resp => resp.json())
             .then(resp => {
@@ -112,8 +114,7 @@ document.getElementById('button2').addEventListener('click', (event) => {
 
 
 });
-
-//button3
+//button 3
 document.getElementById('button3').addEventListener('click', (event) => {
     const input = document.querySelector('input');
     const button = document.getElementById('button3');
@@ -152,7 +153,8 @@ document.getElementById('button3').addEventListener('click', (event) => {
     const prefomSearch = () => {
 
         booksList.innerHTML = "";
-        const searchURI = `https://www.googleapis.com/books/v1/volumes?q=subject:travel&filter=ebooks&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ`;
+        const searchURI = `https://www.googleapis.com/books/v1/volumes?q=javascript&orderBy=relevance&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ`;
+
         fetch(searchURI)
             .then(resp => resp.json())
             .then(resp => {
@@ -170,10 +172,10 @@ document.getElementById('button3').addEventListener('click', (event) => {
 
 });
 
-//drama
+
+//drama button - get all books radio button
 document.getElementById('dramaButton').addEventListener('click', (event) => {
     const input = document.querySelector('input');
-    // const button = document.getElementById('button2');
     const booksList = document.getElementById('books-list');
 
     const renderBooks = (book) => {
@@ -208,9 +210,15 @@ document.getElementById('dramaButton').addEventListener('click', (event) => {
 
     const prefomSearch = () => {
 
-        booksList.innerHTML = "";
-        const searchURI = 'https://www.googleapis.com/books/v1/volumes?q=time&printType=books&maxResults=40&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ';
+        function updateTextInput(val) {
+            document.getElementById('textInput').value = val;
+        }
 
+        let range = document.getElementById('textInput').value;
+        let range2 = document.getElementById('rangeButton').value;
+        updateTextInput(range);
+        booksList.innerHTML = "";
+        const searchURI = `https://www.googleapis.com/books/v1/volumes?q=programming&printType=books&maxResults=${range || range2}&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ`;
         fetch(searchURI)
             .then(resp => resp.json())
             .then(resp => {
@@ -227,7 +235,8 @@ document.getElementById('dramaButton').addEventListener('click', (event) => {
 
 
 });
-//humor button
+
+//humor button - get all magazines radio button
 document.getElementById('humorButton').addEventListener('click', (event) => {
     const input = document.querySelector('input');
     const button = document.getElementById('button3');
@@ -265,8 +274,16 @@ document.getElementById('humorButton').addEventListener('click', (event) => {
 
     const prefomSearch = () => {
 
+        function updateTextInput(val) {
+            document.getElementById('textInput').value = val;
+        }
+
+        let range = document.getElementById('textInput').value;
+        let range2 = document.getElementById('rangeButton').value;
+        updateTextInput(range);
+
         booksList.innerHTML = "";
-        const searchURI = 'https://www.googleapis.com/books/v1/volumes?q=time&printType=magazines&maxResults=40&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ';
+        const searchURI = `https://www.googleapis.com/books/v1/volumes?q=programming&printType=magazines&maxResults=${range || range2}&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ`;
 
         fetch(searchURI)
             .then(resp => resp.json())
@@ -284,11 +301,6 @@ document.getElementById('humorButton').addEventListener('click', (event) => {
 
 
 });
-
-
-
-
-
 
 //glavni
 window.addEventListener('DOMContentLoaded', (event) => {
@@ -333,7 +345,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
             booksList.innerHTML = "";
             const serachBook = input.value;
             if (document.getElementById("dramaButton").checked == true && document.getElementById("humorButton").checked == false && document.getElementById("nameButton").checked == false) {
-                const searchURI = `https://www.googleapis.com/books/v1/volumes?q=${serachBook}&maxResults=40&printType=books`;
+                function updateTextInput(val) {
+                    document.getElementById('textInput').value = val;
+                }
+
+                let range = document.getElementById('textInput').value;
+                let range2 = document.getElementById('rangeButton').value;
+                updateTextInput(range);
+
+                const searchURI = `https://www.googleapis.com/books/v1/volumes?q=programming${serachBook}&printType=books&maxResults=${range || range2}`;
                 fetch(searchURI)
                     .then(resp => resp.json())
                     .then(resp => {
@@ -343,7 +363,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
                         console.log(`Fetch api error: ${err}`);
                     });
             } else if (document.getElementById("humorButton").checked == true && document.getElementById("dramaButton").checked == false && document.getElementById("nameButton").checked == false) {
-                const searchURI = `https://www.googleapis.com/books/v1/volumes?q=${serachBook}&maxResults=40&printType=magazines`;
+                function updateTextInput(val) {
+                    document.getElementById('textInput').value = val;
+                }
+
+                let range = document.getElementById('textInput').value;
+                let range2 = document.getElementById('rangeButton').value;
+                updateTextInput(range);
+
+                const searchURI = `https://www.googleapis.com/books/v1/volumes?q=programming${serachBook}&printType=magazines&maxResults=${range || range2}`;
                 fetch(searchURI)
                     .then(resp => resp.json())
                     .then(resp => {
@@ -353,7 +381,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
                         console.log(`Fetch api error: ${err}`);
                     });
             } else if (document.getElementById("nameButton").checked == true && document.getElementById("humorButton").checked == false && document.getElementById("dramaButton").checked == false) {
-                const searchURI = `https://www.googleapis.com/books/v1/volumes?q=${serachBook}&maxResults=40&printType=all`;
+                function updateTextInput(val) {
+                    document.getElementById('textInput').value = val;
+                }
+
+                let range = document.getElementById('textInput').value;
+                let range2 = document.getElementById('rangeButton').value;
+                updateTextInput(range);
+
+                const searchURI = `https://www.googleapis.com/books/v1/volumes?q=programming${serachBook}&printType=all&maxResults=${range || range2}`;
                 fetch(searchURI)
                     .then(resp => resp.json())
                     .then(resp => {
@@ -363,7 +399,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
                         console.log(`Fetch api error: ${err}`);
                     });
             }
-
+            //   fetch(searchURI)
+            //   .then(resp => resp.json())
+            //   .then(resp => {
+            //       return resp.items.map(book => renderBooks(book))   
+            //   } )   
+            //   .catch((err) => {
+            //       console.log(`Fetch api error: ${err}`);       
+            //   }); 
         }
         input.value = input.defaultValue;
     }
