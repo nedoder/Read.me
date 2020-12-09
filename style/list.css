@@ -59,6 +59,11 @@ li .row img {
     height: 20rem;
 }
 
+.searchIcon {
+    width: 50%;
+    margin: auto;
+}
+
 .search-area {
     background-color: #D7D9CE;
     background-image: url("../images/searchicon.png");
