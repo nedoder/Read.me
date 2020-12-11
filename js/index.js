@@ -51,11 +51,32 @@ function showSlide(x) {
 
     if (window.innerWidth > 992) {
         row[current].style.display = "block";
+        if ((current + 1) >= row.length) {
+            current = 1;
+            row[current + 1].style.display = "block";
+        } else if ((current + 1) < 1) {
+            current = row.length;
+            row[current + 1].style.display = "block";
+        }
         row[current + 1].style.display = "block";
+        if ((current + 2) >= row.length) {
+            current = 1;
+            row[current + 2].style.display = "block";
+        } else if ((current + 2) < 1) {
+            current = row.length;
+            row[current + 1].style.display = "block";
+        }
         row[current + 2].style.display = "block";
 
     } else if (window.innerWidth >= 768) {
         row[current].style.display = "block";
+        if ((current + 1) >= row.length) {
+            current = 1;
+            row[current + 1].style.display = "block";
+        } else if ((current + 1) < 1) {
+            current = row.length;
+            row[current + 1].style.display = "block";
+        }
         row[current + 1].style.display = "block";
 
     } else if (window.innerWidth < 768) {
