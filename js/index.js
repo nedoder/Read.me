@@ -47,45 +47,44 @@ function showSlide(x) {
     if (x < 1) { current = row.length };
     for (let i = 0; i < row.length; i++) {
         row[i].style.display = "none";
-
-        if (window.innerWidth <= 768) {
-            row[current].style.display = "block";
-        } else if (window.innerWidth <= 992) {
-            row[current].style.display = "block";
-            if ((current + 1) >= row.length) {
-                current = 0;
-                row[current + 1].style.display = "block";
-            } else if ((current + 1) < row.length) {
-                row[current + 1].style.display = "block";
-            }
-        } else if (window.innerWidth > 992) {
-            row[current].style.display = "block";
-            if ((current - 1) < 0) {
-                current = row.length;
-                row[current - 1].style.display = "block";
-            } else if ((current - 1) >= 0) {
-                row[current - 1].style.display = "block";
-            }
-            if ((current + 1) >= row.length) {
-                current = 0;
-                row[current + 1].style.display = "block";
-            } else if ((current + 1) < row.length) {
-                row[current + 1].style.display = "block";
-            }
-        }
     }
+
+    if (window.innerWidth > 992) {
+        row[current].style.display = "block";
+        row[current + 1].style.display = "block";
+        row[current + 2].style.display = "block";
+
+    } else if (window.innerWidth >= 768) {
+        row[current].style.display = "block";
+        row[current + 1].style.display = "block";
+
+    } else if (window.innerWidth < 768) {
+        row[current].style.display = "block";
+    }
+
+
 }
 
 setInterval(nextSlide, 3000);
 
 // showing next slide when arrow clicked
 function nextSlide(x) {
-    showSlide(current += 1);
+    if (window.innerWidth > 992) {
+        showSlide(current += 3);
+    } else if (window.innerWidth <= 768) {
+        showSlide(current += 1);
+    }
+    if (window.innerWidth > 768) {
+        showSlide(current += 2);
+    }
+
 }
 
 // showing previous slide when arrow clicked
 function previousSlide(x) {
+
     showSlide(current -= 1);
+
 }
 
 //showing next slide when keyboard key pressed
