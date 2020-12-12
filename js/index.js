@@ -1,5 +1,5 @@
 // fetching top 10 latest books
-fetch("https://www.googleapis.com/books/v1/volumes?q=programming&orderBy=newest&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ")
+fetch("https://www.googleapis.com/books/v1/volumes?q=programming&orderBy=newest&maxResults=20&startIndex=5&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ")
     .then(function(res) {
         return res.json();
     })
@@ -43,33 +43,69 @@ current = 1;
 
 // showing current slide
 function showSlide(x) {
-    if (x > row.length) { current = 1 };
+    if (x >= row.length) { current = 1 };
     if (x < 1) { current = row.length };
     for (let i = 0; i < row.length; i++) {
         row[i].style.display = "none";
     }
-    if (window.innerWidth <= 768) {
+
+    if (window.innerWidth > 992) {
         row[current].style.display = "block";
-    } else if (window.innerWidth <= 992) {
-        row[current].style.display = "block";
+        if ((current + 1) >= row.length) {
+            current = 1;
+            row[current + 1].style.display = "block";
+        } else if ((current + 1) < 1) {
+            current = row.length;
+            row[current + 1].style.display = "block";
+        }
         row[current + 1].style.display = "block";
-    } else {
-        row[current - 1].style.display = "block";
+        if ((current + 2) >= row.length) {
+            current = 1;
+            row[current + 2].style.display = "block";
+        } else if ((current + 2) < 1) {
+            current = row.length;
+            row[current + 1].style.display = "block";
+        }
+        row[current + 2].style.display = "block";
+
+    } else if (window.innerWidth >= 768) {
         row[current].style.display = "block";
+        if ((current + 1) >= row.length) {
+            current = 1;
+            row[current + 1].style.display = "block";
+        } else if ((current + 1) < 1) {
+            current = row.length;
+            row[current + 1].style.display = "block";
+        }
         row[current + 1].style.display = "block";
+
+    } else if (window.innerWidth < 768) {
+        row[current].style.display = "block";
     }
+
+
 }
 
 setInterval(nextSlide, 3000);
 
 // showing next slide when arrow clicked
 function nextSlide(x) {
-    showSlide(current += 1);
+    if (window.innerWidth > 992) {
+        showSlide(current += 3);
+    } else if (window.innerWidth <= 768) {
+        showSlide(current += 1);
+    }
+    if (window.innerWidth > 768) {
+        showSlide(current += 2);
+    }
+
 }
 
 // showing previous slide when arrow clicked
 function previousSlide(x) {
+
     showSlide(current -= 1);
+
 }
 
 //showing next slide when keyboard key pressed
@@ -125,7 +161,7 @@ fetch("https://www.googleapis.com/books/v1/volumes?q=javascript&orderBy=relevanc
 
 
 // fetching top rated books
-fetch("https://www.googleapis.com/books/v1/volumes?q=html&orderBy=relevance&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ")
+fetch("https://www.googleapis.com/books/v1/volumes?q=html&orderBy=relevance&maxResults=30&startIndex=10&key=AIzaSyDguh-Hp8cUCGpm3KdOd6NtZ4oqX5O7RrQ")
     .then(function(res) {
         return res.json();
     })
@@ -136,25 +172,25 @@ fetch("https://www.googleapis.com/books/v1/volumes?q=html&orderBy=relevance&key=
         booksDiv = document.getElementsByClassName("books");
         subBest = document.getElementsByClassName("subtitleBest");
         descBest = document.getElementsByClassName("descriptionBest");
-        imgBest = document.getElementsByClassName("imageBest")
+        imgBest = document.getElementsByClassName("imageBest");
+
         for (let i = 0; i < result.items.length; i++) {
             title = result.items[i].volumeInfo.title;
             author = result.items[i].volumeInfo.authors;
             image = result.items[i].volumeInfo.imageLinks.thumbnail;
-            description = result.items[i].volumeInfo.publisher;
             subtitleBest = result.items[i].volumeInfo.publishedDate;
             describe = result.items[i].volumeInfo.description;
-            if (description === undefined) {
-                descriptionBook[i].innerHTML = "";
+            if (image === undefined) {
+                imgBest[i].src = "#";
             } else {
-                descriptionBook[i].innerHTML = description;
+                imgBest[i].src = image;
             }
             topHeading[i].innerHTML = title;
             bookAuthor[i].innerHTML = author;
             booksDiv[i].style.backgroundImage = "url(" + image + ")";
             subBest[i].innerHTML = subtitleBest;
             descBest[i].innerHTML = describe;
-            imgBest[i].src = image;
+
 
         }
 
@@ -176,27 +212,33 @@ function loadMore() {
     helper2 += 2;
     helper3 += 3;
     for (let i = 0; i < booksDiv.length; i++) {
-        topRated.style.height = "150vh";
+
         if (window.innerWidth <= 768) {
             booksDiv[helper].style.display = "block";
+            booksDiv[helper].style.height = "50vh";
             if (helper === booksDiv.length - 1) {
                 loadBtn.style.display = "none";
             }
         } else if (window.innerWidth <= 992) {
             booksDiv[helper2].style.display = "block";
+            booksDiv[helper2].style.height = "50vh";
             booksDiv[helper2 + 1].style.display = "block";
+            booksDiv[helper2 + 1].style.height = "50vh";
             if (helper2 === booksDiv.length - 2) {
                 loadBtn.style.display = "none";
             }
         } else {
             booksDiv[helper3].style.display = "block";
+            booksDiv[helper3].style.height = "50vh";
             if ((helper3 + 1) <= booksDiv.length - 1) {
                 booksDiv[helper3 + 1].style.display = "block";
+                booksDiv[helper3 + 1].style.height = "50vh";
             } else {
                 loadBtn.style.display = "none";
             }
             if ((helper3 + 2) <= booksDiv.length - 2) {
                 booksDiv[helper3 + 2].style.display = "block";
+                booksDiv[helper3 + 2].style.height = "50vh";
             } else {
                 loadBtn.style.display = "none";
             }

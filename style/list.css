@@ -92,14 +92,14 @@ body {
 }
 
 .container__heading {
-    font-family: Roboto;
     text-align: center;
-    font-size: 24px;
-    padding-top: 30px;
+    font-size: 1.5rem;
+    padding-top: 3rem;
+    color: #13505B;
 }
 
 #search {
-    margin: 20px auto;
+    margin: 3rem auto;
 }
 
 .searchIcon {
@@ -122,36 +122,41 @@ ul {
 }
 
 li {
-    margin: 20px 0 20px 0;
+    margin: 2rem 0 2rem 0;
 }
 
 li .row img {
-    width: 128px;
-    height: 193px;
+    width: 20rem;
+    height: 20rem;
+}
+
+.searchIcon {
+    width: 50%;
+    margin: auto;
+}
+
+.searchIcon img {
+    width: 100%;
+    margin: auto;
 }
 
 .search-area {
-    background-color: #fff;
-    margin: auto;
-    padding: .7em;
+    background-color: #D7D9CE;
+    background-image: url("../images/searchicon.png");
+    background-repeat: no-repeat;
+    background-position: 1rem;
+    margin: 3rem auto;
+    padding: 1rem 3rem;
     width: 75%;
-    max-width: 400px;
-    border: none;
-    border-radius: 500px;
+    border: 2px solid #13505B;
+    outline: none;
+    border-radius: 10rem;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: center;
     justify-content: center;
     -ms-flex-align: center;
-    align-items: center
-}
-
-#search-bar {
-    border: none;
-    outline: none;
-    font-size: 1rem;
-    width: 80%;
-    padding: 0 .9em
+    align-items: center;
 }
 
 .radioButtons {
@@ -159,10 +164,12 @@ li .row img {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    padding-top: 20px;
+    padding-top: 2rem;
+    margin-bottom: 25rem;
 }
 
 .radioButtons__div {
+
     padding-right: 20px;
 }
 
@@ -184,4 +191,5 @@ li .row img {
         width: 50%;
         grid-template-columns: repeat(1, 1fr);
     }
+
 }
