@@ -40,6 +40,7 @@ body {
 
 .formDiv:hover {
     box-shadow: 0 0.5rem 1rem #13505B;
+
 }
 
 h2 {
@@ -118,8 +119,13 @@ h2 {
 
 @media only screen and (max-width: 600px) {
     .formDiv {
-        width: 90%;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 100px;
+        margin-top: 50px;
     }
+   
     #Map {
         width: 100%;
         height: 10rem;
