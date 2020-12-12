@@ -41,9 +41,9 @@
         <div class="dropdown">
             <button class="dropdown-button">List <i class="fa fa-caret-down"></i></button>
             <div class="dropdown-links   animate__animated animate__fadeInRight">
-                <a id="button1" class="big-links">Programming</a>
-                <a id="button2" class="big-links">HTML</a>
-                <a id="button3" class="big-links">JavaScript</a>
+                <a id="buttonProgramming" class="big-links">Programming</a>
+                <a id="buttonHTML" class="big-links">HTML</a>
+                <a id="buttonJavaScript" class="big-links">JavaScript</a>
             </div>
         </div>
         <a href="../index.html" class="big-links">Home</a>
@@ -54,21 +54,27 @@
         <div>
             <h1 class="container__heading">Search all books</h1>
         </div>
+        <div class="searchIcon">
+            <img src="../images/undraw_search.svg" alt="Search">
+        </div>
         <div class="row">
             <div id="search">
                 <input class="search-area" type="text" class="searchTerm" placeholder="Enter book name" id="searchMe">
                 <div class="radioButtons">
                     <div class="radioButtons__div"><input type="radio" checked id="nameButton" name="gender" value="Name"><label for="Name" class="labels">Name</label><br></div>
-                    <div class="radioButtons__div"><input type="radio" id="dramaButton" name="gender" value="Drama"><label for="Drama" class="labels">Books</label><br></div>
-                    <div class="radioButtons__div"><input type="radio" id="humorButton" name="gender" value="Humor"><label for="Humor" class="labels">Magazines</label><br></div>
-                    <div class="radioButtons__div"><input type="range" name="rangeInput" id="rangeButton" min="4" max="20" onchange="updateTextInput(this.value);">
-                        <input type="text" id="textInput" class="textForRadio" value=""><br></div>
+                    <div class="radioButtons__div"><input type="radio" id="bookButton" name="gender" value="Book"><label for="Book" class="labels">Books</label><br></div>
+                    <div class="radioButtons__div"><input type="radio" id="magazineButton" name="gender" value="Magazine"><label for="Magazine" class="labels">Magazines</label><br></div>
+                    <div class="radioButtons__div"><input type="range" name="rangeInput" id="rangeButton" min="4" max="20">
+                        <input type="text" id="textInput" value=""><br></div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-sm">
                 <ul id="books-list" class="list-group"></ul>
+            </div>
+            <div class="kolona2">
+
             </div>
         </div>
     </div>
